@@ -56,7 +56,7 @@ console.log('Is leaving allowed? -', leave(1,1))
    // function occupancy()
 
 const occupancy = () => {
-    return {adults: adults, children: children}
+    return {adults, children}
 }
 
 console.log('what is the current occupancy? -', occupancy())
