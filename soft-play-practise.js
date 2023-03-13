@@ -2,6 +2,9 @@
 let adults = 0
 let children = 0
 
+let totalAdults = 0
+let totalChildren = 0
+
 // TODO: Write your functions in the below section. Your functions should update
 // the adults and children variables defined above.
 // Start with the occupancy function.
@@ -16,13 +19,15 @@ const enter = (numAdults, numChildren) => {
     if (numAdults < numChildren) {
         return false
     } else {
-        adults = adults + numAdults
-        children = children + numChildren
+        adults += numAdults
+        children += numChildren
+        totalAdults += numAdults
+        totalChildren += numChildren
         return true
     }
 }
 console.log('Is entry allowed? -', enter(2,2))
-console.log('running total -', adults, children)
+// console.log('running total -', adults, children)
 // 2 - make a function that logs adults and children LEAVING
   // function leave(numAdults, numChildren)
 
@@ -43,8 +48,8 @@ const leave = (numAdults, numChildren) => {
     } else if ((numAdults > adults) || (numChildren > children)) {
         return false
     } else {
-        adults = adults - numAdults
-        children = children - numChildren
+        adults -= numAdults
+        children -= numChildren
         return true
     }
 }
@@ -59,6 +64,9 @@ const occupancy = () => {
     return {adults, children}
 }
 
+const total = () => {
+    return {totalAdults, totalChildren}
+}
+
 console.log('what is the current occupancy? -', occupancy())
-
-
+console.log('what is the toal number of visitors today? -', total())
